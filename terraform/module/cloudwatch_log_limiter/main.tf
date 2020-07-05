@@ -15,3 +15,10 @@ resource "aws_sns_topic" "log_rate_alarm" {
   name         = "LogRateAlarm"
   display_name = "Topic for log rate alarm"
 }
+
+resource "aws_iam_policy" "deny_logs" {
+  name = "DenyCloudWatchLogging"
+  path = "/"
+  description = "Prevents the creation of log groups, log streams or logging to any such resources"
+  policy = file("${path.module}/policy.json")
+}

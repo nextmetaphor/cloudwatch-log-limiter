@@ -9,9 +9,6 @@ export AWS_DEFAULT_REGION="us-east-1"
 # assume this has been done beforehand
 # aws configure
 
-# set the region
-export AWS_DEFAULT_REGION="us-east-1"
-
 terraform init
 terraform fmt
 terraform validate
